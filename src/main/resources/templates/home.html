@@ -8,14 +8,12 @@
 <h1>Liste des articles</h1>
 <script th:inline="javascript">
     var articles = /*[[${#strings.escapeJson(#json.encode(#lists.toList(articles)))}]]*/ '{}';
-
-    // Exemple d'utilisation des données JSON
+    //Exemple d'utilisation des données JSON
     articles.forEach(function(article) {
         console.log(article.libelle);
         console.log(article.description);
         console.log(article.prix);
     });
 </script>
-
 </body>
 </html>

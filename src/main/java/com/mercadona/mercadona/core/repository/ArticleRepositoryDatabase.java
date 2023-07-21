@@ -10,9 +10,12 @@ import java.util.List;
 
 @Repository
 public class ArticleRepositoryDatabase {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    public ArticleRepositoryDatabase(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public List<Article> list() {
         return jdbcTemplate.query("select * from \"Articles\";",

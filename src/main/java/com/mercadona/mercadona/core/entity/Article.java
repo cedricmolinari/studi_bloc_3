@@ -1,8 +1,11 @@
 package com.mercadona.mercadona.core.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 public class Article {
+
     private Long id;
     private String libelle;
     private String description;

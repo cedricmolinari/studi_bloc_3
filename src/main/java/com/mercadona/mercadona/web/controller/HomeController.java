@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -20,9 +21,12 @@ public class HomeController {
 
     @GetMapping("/home")
     public String displayHome(Model model){
-
         List<Article> articles = articleRepositoryDatabase.list();
-        model.addAttribute("Articles", articles);
+        model.addAttribute("articles", articles);
         return "home";
     }
+    /*@RequestMapping("/home")
+    public String displayHome(){
+        return "home";
+    }*/
 }
