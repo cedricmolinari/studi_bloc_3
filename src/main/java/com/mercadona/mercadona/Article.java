@@ -1,15 +1,24 @@
-package com.mercadona.mercadona.core.entity;
+package com.mercadona.mercadona;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "articles")
 public class Article {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Column(name = "libelle")
     private String libelle;
+    @Column(name = "description")
     private String description;
-    BigDecimal prix;
+    @Column(name = "prix")
+    private BigDecimal prix;
+
+    // Constructeur par défaut (nécessaire pour JPA)
+    public Article() {
+    }
 
     public Long getId() {
         return id;
@@ -43,19 +52,6 @@ public class Article {
         this.prix = prix;
     }
 
-    public Article(Long id, String libelle, String description, BigDecimal prix) {
-        this.id = id;
-        this.libelle = libelle;
-        this.description = description;
-        this.prix = prix;
-    }
-
-    public Article(String libelle, String description, BigDecimal prix) {
-        this.libelle = libelle;
-        this.description = description;
-        this.prix = prix;
-    }
-
-    public Article() {
-    }
+    // Autres constructeurs si nécessaire
+    // ...
 }
