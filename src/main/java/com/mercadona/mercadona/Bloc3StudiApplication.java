@@ -16,6 +16,7 @@ public class Bloc3StudiApplication {
 			Connection co = DriverManager.getConnection(URL, user, null);
 
 			Statement st = co.createStatement();
+			st.executeUpdate("UPDATE \"articles\" SET prix = 7.5 where libelle = 'Ampoule'");
 			ResultSet rs = st.executeQuery("SELECT * FROM \"articles\"");
 			while(rs.next()) {
 				String libelleArticle = rs.getString("libelle");
