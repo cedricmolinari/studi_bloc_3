@@ -1,32 +1,33 @@
 package com.mercadona.mercadona;
 
-import com.mercadona.mercadona.core.entity.Article;
-import com.mercadona.mercadona.core.repository.ArticleRepositoryDatabase;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-@SpringBootApplication
-@EnableJdbcRepositories
-@ComponentScan(basePackages = "com.mercadona.mercadona.core.repository")
-public class Bloc3StudiApplication implements CommandLineRunner {
-//public class Bloc3StudiApplication {
-	@Autowired
-	private ArticleRepositoryDatabase articleRepositoryDatabase;
+public class Bloc3StudiApplication {
+
 
 	public static void main(String[] args) {
-		SpringApplication.run(Bloc3StudiApplication.class, args);
+		try {
+			String URL = "jdbc:postgresql://localhost:5432/mercadona";
+			String user = "postgres";
+			Connection co = DriverManager.getConnection(URL, user, null);
+
+			Statement st = co.createStatement();
+			ResultSet rs = st.executeQuery("SELECT * FROM \"articles\"");
+			while(rs.next()) {
+				String libelleArticle = rs.getString("libelle");
+				System.out.println(libelleArticle);
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+
 	}
 
-	public void run(String... args) {
-		List<Article> articles = articleRepositoryDatabase.list();
-		for (Article article : articles) {
-			System.out.println(article);
-		}
-	}
+
+
 }
