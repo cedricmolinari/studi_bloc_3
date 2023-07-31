@@ -1,4 +1,4 @@
-package com.mercadona.mercadona;
+package com.mercadona.mercadona.core.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -51,7 +51,4 @@ public class Article {
     public void setPrix(BigDecimal prix) {
         this.prix = prix;
     }
-
-    // Autres constructeurs si nécessaire
-    // ...
 }

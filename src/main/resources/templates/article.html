@@ -6,19 +6,12 @@
 </head>
 <body>
 <h1>Liste des articles</h1>
-<script th:inline="javascript">
-
-    var articles = /*[[${articles}]]*/ '{}';
-    console.log(articles)
-    //Exemple d'utilisation des données JSON
-    if (articles) {
-        articles.forEach(function(article) {
-            console.log(article.libelle);
-            console.log(article.description);
-            console.log(article.prix);
-        })} else {
-        console.log("liste vide")
-    };
-</script>
+<ul>
+    <li th:each="article : ${articles}">
+        <p th:text="${article.libelle}"></p>
+        <p th:text="${article.description}"></p>
+        <p th:text="${article.prix}"></p>
+    </li>
+</ul>
 </body>
 </html>

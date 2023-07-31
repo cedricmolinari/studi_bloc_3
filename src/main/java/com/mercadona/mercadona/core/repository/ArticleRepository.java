@@ -1,5 +1,6 @@
-package com.mercadona.mercadona;
+package com.mercadona.mercadona.core.repository;
 
+import com.mercadona.mercadona.core.entity.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

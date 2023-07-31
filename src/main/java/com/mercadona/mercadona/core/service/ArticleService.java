@@ -1,5 +1,7 @@
-package com.mercadona.mercadona;
+package com.mercadona.mercadona.core.service;
 
+import com.mercadona.mercadona.core.entity.Article;
+import com.mercadona.mercadona.core.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +11,6 @@ import java.util.List;
 public class ArticleService {
     @Autowired
     ArticleRepository articleRepository;
-
-
-    /*public ArticleService(ArticleRepository articleRepository) {
-
-        this.articleRepository = articleRepository;
-    }*/
 
     public List<Article> list() {
 
