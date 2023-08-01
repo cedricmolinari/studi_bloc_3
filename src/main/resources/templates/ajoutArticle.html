@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un article</title>
+</head>
+<body>
+<form th:action="@{form/ajout}" th:object="${articleForm}" method="post">
+    <p>Libellé</p>
+    <p>
+        <input type="text" th:field="*{libelle}"/>
+    </p>
+    <div th:if="${#fields.hasErrors('libelle')}" th:errors="*{libelle}"></div>
+    <p>Description</p>
+    <p>
+        <textarea rows="4" cols="50" th:field="*{description}"/>
+    </p>
+    <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+
+    <p>Prix</p>
+    <p>
+        <input type="text" th:field="*{prix}"/>
+    </p>
+    <div th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}"></div>
+
+    <input type="submit" value="Ajouter"/>
+
+</form>
+</body>
+</html>

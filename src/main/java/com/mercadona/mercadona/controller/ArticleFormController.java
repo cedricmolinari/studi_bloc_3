@@ -17,24 +17,24 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-public class ArticleController {
+public class ArticleFormController {
     private final ArticleService articleService;
     @Autowired
-    public ArticleController(ArticleService articleService) {
+    public ArticleFormController(ArticleService articleService) {
         this.articleService = articleService;
     }
-    @GetMapping("/article")
-    public String displayArticles(Model model) {
-        List<Article> articles = articleService.list();
-        model.addAttribute("articles", articles);
+    @Transactional
+    @PostMapping("article/form/ajout")
+    public String ajouterArticle(@Valid @ModelAttribute ArticleForm form, BindingResult results) {
+        if (results.hasErrors()) {
+            return "ajoutArticle";
+        }
+        Article article = new Article();
+        article.setLibelle(form.getLibelle());
+        article.setDescription(form.getDescription());
+        article.setPrix(form.getPrix());
+
+        articleService.addArticle(article);
         return "article";
     }
-
-    @GetMapping("article/form")
-    public String displayArticleForm(Model model) {
-        model.addAttribute("articleForm", new ArticleForm());
-        return "ajoutArticle";
-    }
-
-
 }

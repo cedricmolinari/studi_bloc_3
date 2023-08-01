@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1>Liste des articles</h1>
+    <p>
+        <a href="article/form">Ajouter un article</a>
+    </p>
 <ul>
     <li th:each="article : ${articles}">
         <p th:text="${article.libelle}"></p>

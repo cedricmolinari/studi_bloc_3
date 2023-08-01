@@ -18,8 +18,9 @@ public class ArticleService {
         return articles;
     }
 
-    public void addArticle(Article nouvelArticle) {
-        articleRepository.save(nouvelArticle);
+    public void addArticle(Article ajoutArticle) {
+        articleRepository.save(ajoutArticle);
     }
+
 }
 
