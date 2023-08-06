@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -25,7 +26,7 @@ public class ArticleFormController {
     }
     @Transactional
     @PostMapping("article/form/ajout")
-    public String ajouterArticle(@Valid @ModelAttribute ArticleForm form, BindingResult results) {
+    public String ajouterArticle(@Valid @ModelAttribute ArticleForm form, BindingResult results, RedirectAttributes redirectAttributes) {
         if (results.hasErrors()) {
             return "ajoutArticle";
         }
@@ -35,6 +36,11 @@ public class ArticleFormController {
         article.setPrix(form.getPrix());
 
         articleService.addArticle(article);
-        return "article";
+
+        // Ajouter un message de succès à l'objet RedirectAttributes
+        redirectAttributes.addFlashAttribute("message", "L'article a été ajouté avec succès.");
+
+        // Rediriger vers l'URL "/article" en utilisant une redirection temporaire (303)
+        return "redirect:/article";
     }
 }

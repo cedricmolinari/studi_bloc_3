@@ -2,19 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Article</title>
 </head>
 <body>
 <h1>Liste des articles</h1>
-    <p>
-        <a href="article/form">Ajouter un article</a>
-    </p>
-<ul>
-    <li th:each="article : ${articles}">
-        <p th:text="${article.libelle}"></p>
-        <p th:text="${article.description}"></p>
-        <p th:text="${article.prix}"></p>
-    </li>
-</ul>
+<p>
+    <a href="article/form">Ajouter un article</a>
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>Libellé</th>
+        <th>Description</th>
+        <th>Prix</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article, stat : ${articles}" th:id="${article.id}" th:attr="data-num=${stat.index}">
+        <td><input type="text" id="libelle" th:value="${article.libelle}" readonly="true" /></td>
+        <td><input type="text" id="description" th:value="${article.description}" readonly="true"  /></td>
+        <td><input type="text" id="prix" th:value="${article.prix}"  readonly="true"  /></td>
+        <td><input type="button" value="Modifier" th:attr="data-num=${stat.index}"></td>
+    </tr>
+    </tbody>
+</table>
+<script th:src="@{/js/article.js}"></script>
+
 </body>
 </html>
