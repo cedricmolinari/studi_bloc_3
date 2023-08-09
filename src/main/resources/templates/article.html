@@ -7,7 +7,7 @@
 <body>
 <h1>Liste des articles</h1>
 <p>
-    <a href="article/form">Ajouter un article</a>
+    <a th:href="@{article/form}">Ajouter un article</a>
 </p>
 <table>
     <thead>
@@ -24,6 +24,7 @@
         <td><input type="text" id="prix" th:value="${article.prix}"  readonly="true"  /></td>
         <td><input type="button" value="Modifier" th:attr="data-num=${stat.index}"></td>
     </tr>
+    <a th:href="@{login}">Se déconnecter</a>
     </tbody>
 </table>
 <script th:src="@{/js/article.js}"></script>

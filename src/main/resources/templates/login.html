@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+<h1>Se connecter</h1>
+<div th:if="${okInscription}">
+    <p th:text="${okInscription}"></p>
+</div>
+<form th:action="@{login}" th:object="${loginForm}" method="post">
+    <div class="form-group">
+        <label for="user">Utilisateur :</label>
+        <input type="text" th:field="*{utilisateur}" name="Utilisateur" id="user" placeholder="Entrer votre identifiant">
+        <div th:if="${#fields.hasErrors('utilisateur')}" th:errors="*{utilisateur}"></div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="password">Mot de passe :</label>
+        <input type="password" th:field="*{password}" name="Mot de passe" id="password" placeholder="Entrer votre mot de passe">
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    </div>
+    <br>
+    <input type="submit" value="Connexion"/>
+
+
+    <a th:href="@{inscription}">S'inscrire</a>
+</form>
+
+
+
+<!--<script th:src="@{/js/article.js}"></script>-->
+
+</body>
+</html>
