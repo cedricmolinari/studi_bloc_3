@@ -31,6 +31,10 @@ public class ArticleService {
         return articleRepository.findById(id).orElse(null);
     }
 
+    public void save(Article article) {
+        articleRepository.save(article);
+    }
+
     /*public void modifArticle(Article articleAModifier) { articleRepository.}*/
 
 }

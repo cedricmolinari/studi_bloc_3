@@ -19,14 +19,39 @@
     </thead>
     <tbody>
     <tr th:each="article, stat : ${articles}" th:id="${article.id}" th:attr="data-num=${stat.index}">
-        <td><input type="text" id="libelle" th:value="${article.libelle}" readonly="true" /></td>
-        <td><input type="text" id="description" th:value="${article.description}" readonly="true"  /></td>
-        <td><input type="text" id="prix" th:value="${article.prix}"  readonly="true"  /></td>
-        <td><input type="button" value="Modifier" th:attr="data-num=${stat.index}"></td>
+        <td>
+            <input type="text" id="libelle" th:value="${article.libelle}" readonly="true" />
+        </td>
+        <td>
+            <input type="text" id="description" th:value="${article.description}" readonly="true"  />
+        </td>
+        <td>
+            <input type="text" id="prix" th:value="${article.prix}"  readonly="true"  />
+        </td>
+        <td>
+            <img th:src="@{'/' + ${article.cheminImage}}" alt="Article image" width="100" height="50" />
+
+        </td>
+        <td>
+            <input type="button" value="Modifier" th:attr="data-num=${stat.index}">
+        </td>
     </tr>
-    <a th:href="@{login}">Se déconnecter</a>
     </tbody>
 </table>
+<form th:action="@{/article/upload}" method="post" enctype="multipart/form-data">
+    <!-- Autres champs -->
+    <div class="form-group">
+        <label for="image">Image :</label>
+        <input type="file" id="image" name="image" />
+    </div>
+    <button type="submit">Enregistrer</button>
+</form>
+
+
+<a th:href="@{login}">Se déconnecter</a>
+
+
+
 <script th:src="@{/js/article.js}"></script>
 
 </body>

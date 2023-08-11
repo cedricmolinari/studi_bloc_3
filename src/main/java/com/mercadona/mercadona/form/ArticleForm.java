@@ -1,5 +1,7 @@
 package com.mercadona.mercadona.form;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -16,6 +18,8 @@ public class ArticleForm {
     private String description;
     @NotBlank(message = "Veuillez entrer un prix")
     private BigDecimal prix;
+
+    private MultipartFile image;
 
     public Long getId() {
         return id;
@@ -47,5 +51,13 @@ public class ArticleForm {
 
     public void setPrix(BigDecimal prix) {
         this.prix = prix;
+    }
+
+    public MultipartFile getImage() {
+        return image;
+    }
+
+    public void setImage(MultipartFile image) {
+        this.image = image;
     }
 }

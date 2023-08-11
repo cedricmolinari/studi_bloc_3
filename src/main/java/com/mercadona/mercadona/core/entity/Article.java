@@ -16,6 +16,17 @@ public class Article {
     @Column(name = "prix")
     private BigDecimal prix;
 
+    @Column(name = "chemin_image")
+    private String cheminImage;
+
+    public String getCheminImage() {
+        return cheminImage;
+    }
+
+    public void setCheminImage(String cheminImage) {
+        this.cheminImage = cheminImage;
+    }
+
     // Constructeur par défaut (nécessaire pour JPA)
     public Article() {
     }
