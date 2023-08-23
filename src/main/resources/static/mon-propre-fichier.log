@@ -1,0 +1,78 @@
+2023-08-21 08:09:10.164 DEBUG 1380 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-08-21 08:09:10.193 DEBUG 1380 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2023-08-21 08:09:10.204 DEBUG 1380 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-08-21 08:09:10.209 DEBUG 1380 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-08-21 08:11:56.855 DEBUG 1588 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-08-21 08:11:56.881 DEBUG 1588 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 11 mappings in 'requestMappingHandlerMapping'
+2023-08-21 08:11:56.892 DEBUG 1588 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-08-21 08:11:56.896 DEBUG 1588 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-08-21 08:12:53.658  INFO 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-21 08:12:53.659 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2023-08-21 08:12:53.659 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2023-08-21 08:12:53.659 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2023-08-21 08:12:53.659 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@62615be
+2023-08-21 08:12:53.659 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5f4e389a
+2023-08-21 08:12:53.659 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-08-21 08:12:53.659  INFO 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-08-21 08:12:53.669 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/article", parameters={}
+2023-08-21 08:12:53.671 DEBUG 1588 --- [http-nio-80-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mercadona.mercadona.controller.ArticleController#displayArticles(Model)
+2023-08-21 08:12:53.735 DEBUG 1588 --- [http-nio-80-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-08-21 08:12:53.837 DEBUG 1588 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-21 08:12:53.849 DEBUG 1588 --- [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/0e990ba7-8f9a-413f-a4d8-dba7f636e844_accident1.jpeg", parameters={}
+2023-08-21 08:12:53.849 DEBUG 1588 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/null", parameters={}
+2023-08-21 08:12:53.851 DEBUG 1588 --- [http-nio-80-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2023-08-21 08:12:53.851 DEBUG 1588 --- [http-nio-80-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2023-08-21 08:12:53.852 DEBUG 1588 --- [http-nio-80-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2023-08-21 08:12:53.853 DEBUG 1588 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2023-08-21 08:12:53.854 DEBUG 1588 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2023-08-21 08:12:53.856 DEBUG 1588 --- [http-nio-80-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2023-08-21 08:12:53.857 DEBUG 1588 --- [http-nio-80-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/js/article.js", parameters={}
+2023-08-21 08:12:53.858 DEBUG 1588 --- [http-nio-80-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2023-08-21 08:12:53.858 DEBUG 1588 --- [http-nio-80-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-21 08:12:53.859 DEBUG 1588 --- [http-nio-80-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-21 08:12:53.864 DEBUG 1588 --- [http-nio-80-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-08-21 08:12:53.865 DEBUG 1588 --- [http-nio-80-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 21 08:12:53 CEST 2023, status=404, error=Not Found, path=/null}]
+2023-08-21 08:12:53.881 DEBUG 1588 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2023-08-21 08:12:53.903 DEBUG 1588 --- [http-nio-80-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2023-08-21 08:12:53.904 DEBUG 1588 --- [http-nio-80-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2023-08-21 08:12:53.904 DEBUG 1588 --- [http-nio-80-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2023-08-21 08:12:53.904 DEBUG 1588 --- [http-nio-80-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2023-08-21 08:12:53.905 DEBUG 1588 --- [http-nio-80-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2023-08-21 08:12:53.905 DEBUG 1588 --- [http-nio-80-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2023-08-21 08:12:53.905 DEBUG 1588 --- [http-nio-80-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-08-21 08:12:53.905 DEBUG 1588 --- [http-nio-80-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Aug 21 08:12:53 CEST 2023, status=404, error=Not Found, path=/favicon.ico}]
+2023-08-21 08:12:53.911 DEBUG 1588 --- [http-nio-80-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2023-08-21 08:13:07.736 DEBUG 1588 --- [http-nio-80-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/article/form", parameters={}
+2023-08-21 08:13:07.737 DEBUG 1588 --- [http-nio-80-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mercadona.mercadona.controller.ArticleController#displayArticleForm(Model)
+2023-08-21 08:13:07.761 DEBUG 1588 --- [http-nio-80-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-08-21 08:13:07.785 DEBUG 1588 --- [http-nio-80-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-08-21 08:15:21.798  INFO 1679 --- [main] c.m.mercadona.Bloc3StudiApplication      : Starting Bloc3StudiApplication using Java 17.0.7 on Air-de-Molinari with PID 1679 (/Users/cedricm/Desktop/Bloc 3/Evaluation Mercadona/mercadona/target/classes started by cedricm in /Users/cedricm/Desktop/Bloc 3/Evaluation Mercadona/mercadona)
+2023-08-21 08:15:21.799  INFO 1679 --- [main] c.m.mercadona.Bloc3StudiApplication      : No active profile set, falling back to default profiles: default
+2023-08-21 08:15:22.054  INFO 1679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-08-21 08:15:22.075  INFO 1679 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2023-08-21 08:15:22.270  INFO 1679 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2023-08-21 08:15:22.274  INFO 1679 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-21 08:15:22.274  INFO 1679 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-08-21 08:15:22.301  INFO 1679 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-21 08:15:22.301  INFO 1679 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 485 ms
+2023-08-21 08:15:22.353  INFO 1679 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-08-21 08:15:22.372  INFO 1679 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2023-08-21 08:15:22.421  INFO 1679 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-08-21 08:15:22.448  INFO 1679 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-21 08:15:22.483  INFO 1679 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-21 08:15:22.495  INFO 1679 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-08-21 08:15:22.707  INFO 1679 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-08-21 08:15:22.710  INFO 1679 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-08-21 08:15:22.981  INFO 1679 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7028634e-b47a-4068-96f5-cb14f9806182
+
+2023-08-21 08:15:23.010  INFO 1679 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b3f62d7, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e02fb23, org.springframework.security.web.header.HeaderWriterFilter@5da2966, org.springframework.security.web.authentication.logout.LogoutFilter@4504a4ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57e6d56a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10b2c1cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b3ee43e, org.springframework.security.web.session.SessionManagementFilter@299ddfff, org.springframework.security.web.access.ExceptionTranslationFilter@2fc435e9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63c6c5e5]
+2023-08-21 08:15:23.031  INFO 1679 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2023-08-21 08:15:23.035  INFO 1679 --- [main] c.m.mercadona.Bloc3StudiApplication      : Started Bloc3StudiApplication in 1.386 seconds (JVM running for 1.597)
+2023-08-21 08:15:43.947  INFO 1679 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-21 08:15:43.947  INFO 1679 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-21 08:15:43.948  INFO 1679 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-08-21 08:37:24.592  INFO 1679 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-08-21 08:37:24.593  INFO 1679 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-08-21 08:37:24.595  INFO 1679 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -2,7 +2,9 @@ package com.mercadona.mercadona.form;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -16,7 +18,8 @@ public class ArticleForm {
     @NotBlank(message = "Veuillez entrer une description")
     @Size(max = 255)
     private String description;
-    @NotBlank(message = "Veuillez entrer un prix")
+    @NotNull(message = "Le prix ne doit pas être nul")
+    @DecimalMin(value = "0.01", message = "Le prix doit être supérieur à zéro")
     private BigDecimal prix;
 
     private MultipartFile image;

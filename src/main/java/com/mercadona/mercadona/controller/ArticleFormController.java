@@ -23,8 +23,12 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 @Controller
 public class ArticleFormController {
+    private static final Logger logger = LogManager.getLogger(ArticleFormController.class);
     private final ArticleService articleService;
     @Autowired
     public ArticleFormController(ArticleService articleService) {
@@ -33,7 +37,9 @@ public class ArticleFormController {
     @Transactional
     @PostMapping("article/form/ajout")
     public String ajouterArticle(@Valid @ModelAttribute ArticleForm form, BindingResult results, RedirectAttributes redirectAttributes) {
+        logger.info("Tentative d'ajout d'un article avec le libellé: {}", form.getLibelle());
         if (results.hasErrors()) {
+            logger.warn("Erreur dans le formulaire d'ajout de l'article.");
             return "ajoutArticle";
         }
         Article article = new Article();
@@ -72,6 +78,7 @@ public class ArticleFormController {
     }
 
     private String saveImage(MultipartFile file) {
+        logger.debug("Sauvegarde de l'image: {}", file.getOriginalFilename());
         try {
             // Définir le chemin où vous souhaitez sauvegarder l'image
             String folder = "src/main/resources/static/";
