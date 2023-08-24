@@ -1,0 +1,163 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ArticleRestController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.mercadona.mercadona.api</a>
+</div>
+
+<h1>Coverage Summary for Class: ArticleRestController (com.mercadona.mercadona.api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ArticleRestController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.mercadona.mercadona.api;
+&nbsp;
+&nbsp;import com.mercadona.mercadona.core.entity.Article;
+&nbsp;import com.mercadona.mercadona.core.entity.ArticleModificationRequest;
+&nbsp;import com.mercadona.mercadona.core.service.ArticleService;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;import java.util.HashMap;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Map;
+&nbsp;
+&nbsp;import org.apache.logging.log4j.LogManager;
+&nbsp;import org.apache.logging.log4j.Logger;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/api/article&quot;)
+&nbsp;public class ArticleRestController {
+<b class="fc">&nbsp;    private static final Logger LOGGER = LogManager.getLogger(ArticleRestController.class);</b>
+&nbsp;
+&nbsp;    private final ArticleService articleService;
+&nbsp;
+&nbsp;    @Autowired
+<b class="fc">&nbsp;    public ArticleRestController(ArticleService articleService) {</b>
+<b class="fc">&nbsp;        this.articleService = articleService;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;/modif&quot;)
+&nbsp;    public ResponseEntity&lt;Object&gt; modifArticle(@RequestBody ArticleModificationRequest request) {
+&nbsp;
+<b class="fc">&nbsp;        Long articleId = request.getId();</b>
+<b class="fc">&nbsp;        LOGGER.info(&quot;Tentative de modification de l&#39;article avec l&#39;ID : {}&quot;, articleId);</b>
+&nbsp;        // Effectuez les opérations de modification de l&#39;article ici en utilisant les informations du `request`
+&nbsp;        // Par exemple :
+<b class="fc">&nbsp;        Article article = articleService.findById(request.getId());</b>
+<b class="fc">&nbsp;        if (article == null) {</b>
+<b class="fc">&nbsp;            LOGGER.warn(&quot;Aucun article trouvé avec l&#39;ID : {}&quot;, articleId);</b>
+<b class="fc">&nbsp;            return ResponseEntity.notFound().build();</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        LOGGER.debug(&quot;Article original : Libellé = {}, Description = {}, Prix = {}&quot;, article.getLibelle(), article.getDescription(), article.getPrix());</b>
+&nbsp;
+<b class="fc">&nbsp;        article.setLibelle(request.getLibelle());</b>
+<b class="fc">&nbsp;        article.setDescription(request.getDescription());</b>
+<b class="fc">&nbsp;        article.setPrix(request.getPrix());</b>
+&nbsp;
+<b class="fc">&nbsp;        articleService.updateArticle(article);</b>
+<b class="fc">&nbsp;        LOGGER.info(&quot;Article avec l&#39;ID {} a été mis à jour avec succès.&quot;, articleId);</b>
+<b class="fc">&nbsp;        LOGGER.debug(&quot;Article mis à jour : Libellé = {}, Description = {}, Prix = {}&quot;, article.getLibelle(), article.getDescription(), article.getPrix());</b>
+&nbsp;
+&nbsp;        // Créer un objet JSON pour représenter la réponse
+<b class="fc">&nbsp;        Map&lt;String, Object&gt; response = new HashMap&lt;&gt;();</b>
+<b class="fc">&nbsp;        response.put(&quot;message&quot;, &quot;Article modifié avec succès.&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-08-24 08:41</div>
+</div>
+</body>
+</html>
